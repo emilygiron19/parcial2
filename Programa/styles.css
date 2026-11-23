@@ -1,0 +1,153 @@
+
+:root {
+  --bg: #ecd5f0;          /* color de fondo de la página */
+  --card: #da98de;           /* fondo de cada tarjeta (ejercicio) */
+  --text: #570d60;        /* color del texto principal */
+  --muted: #451b79;       /* texto secundario (etiquetas, subtítulo) */
+  --border: #d59fe8;      /* color de los bordes */
+  --accent: #a03bdb;      /* color principal (botones, foco) */
+  --accent-text: #d27eea;    /* texto sobre el color principal */
+  --ok-bg: #e7f5ec;       /* fondo del mensaje de resultado correcto */
+  --ok-text: #0c3404;     /* texto del mensaje de resultado correcto */
+  --err-bg: #fdecec;      /* fondo del mensaje de error */
+  --err-text: #530404;    /* texto del mensaje de error */
+  color-scheme: light;
+}
+
+
+/*ESTILOS GENERALES*/
+
+/* Marjenes de los elementos para que no se vean deslineados  */
+* {
+  box-sizing: border-box;
+}
+
+/* Fondo, color de texto, tipo de letra y espaciado de líneas de toda la página. */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+/* Contenedor principal */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* Título principal de la página. */
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 4px;
+}
+
+/* Texto pequeño debajo del título. */
+.sub {
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+/* Diseño de las ejecuciones en la página (Tipo caja de ejecución) */
+
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 0 0 12px;
+}
+
+/* FORMULARIO */
+
+/* Texto que describe cada campo (por ejemplo "Base (m)"). */
+label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 10px 0 4px;
+}
+
+/* Cajas donde el usuario escribe: ocupan todo el ancho
+   disponible y tienen bordes redondeados. */
+input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Resalta con un contorno de color el campo que está
+   seleccionado (cuando el usuario hace clic en él). */
+input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Coloca varios campos uno al lado del otro (base y altura,
+   las tres notas, etc.). En pantallas pequeñas se apilan
+   automáticamente uno debajo de otro. */
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+/*  BOTONES */
+
+/* Aspecto de los botones: color principal, esquinas
+   redondeadas y cursor de mano al pasar sobre ellos. */
+button {
+  margin-top: 14px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-text);
+  cursor: pointer;
+}
+
+/* Al pasar el mouse por encima, el botón se ve un poco
+   más brillante. */
+button:hover {
+  filter: brightness(1.08);
+}
+
+/* MENSAJES DE RESULTADO */
+
+/* El cuadro de resultado empieza oculto (display: none)
+   y solo aparece cuando JavaScript le agrega la clase
+   "ok" o "err". */
+.result {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: none;
+}
+
+/* Resultado correcto: fondo y texto verdes. */
+.result.ok {
+  display: block;
+  background: var(--ok-bg);
+  color: var(--ok-text);
+}
+
+/* Error (campo vacío o dato inválido): fondo y texto rojos. */
+.result.err {
+  display: block;
+  background: var(--err-bg);
+  color: var(--err-text);
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Parcial 2</title>
+<link rel="stylesheet" href="styles.css">
+<!-- LLAMADA DE CSS -->
+
+</head>
+<body>
+<main>
+<h1>Parcial 2</h1>
+ <!-- Título de la página -->
+<p class="sub">Cuatro programas sencillos con HTML, CSS y JavaScript.</p>
+ <!-- Subtítulo de la página -->
+
+
+<!-- Problema 1:  Cubo de un número. 
+Solicite al usuario que escriba un número. 
+Al hacer clic en el botón 'Calcular cubo', el programa
+debe mostrar el resultado del número elevado al cubo. -->
+
+<section>
+<h2>1. Cubo de un número</h2>
+<label for="cNum">Escriba un número</label>
+<input type="number" id="cNum" step="any" placeholder="Ej.: 3">
+<button onclick="calcularCubo()">Calcular cubo</button>
+<div class="result" id="cRes"></div>
+</section>
+
+<!-- Problema 2: Su programa debe permitir calcular el área de un triángulo en metros, 
+para esto debe ingresar el valor de suscatetos, (altura y base). 
+Cuando el usuario presione un botón, el programa debe realizar la operación y mostrar el
+resultado total en pantalla con un mensaje descriptivo. 
+Sabiendo que el área de un triángulo es igual a : [( base por la altura )/2 ].--> 
+
+<section>
+<h2>2. Área de un triángulo</h2>
+<div class="row">
+<div><label for="tBase">Base (m)</label><input type="number" id="tBase" step="any" min="0" placeholder="Ej.: 11"></div>
+<div><label for="tAlt">Altura (m)</label><input type="number" id="tAlt" step="any" min="0" placeholder="Ej.: 4"></div>
+</div>
+<button onclick="calcularArea()">Calcular área</button>
+<div class="result" id="tRes"></div>
+</section>
+
+<!-- Problema 3: Promedio de calificaciones. 
+Solicite al usuario, el nombre de un estudiante y tres calificaciones. 
+Cuando se presione el botón 'Calcular promedio',
+ el sistema debe mostrar el nombre del estudiante junto con su promedio final. -->
+
+<section>
+<h2>3. Promedio de calificaciones</h2>
+<label for="pNom">Nombre del estudiante</label>
+<input type="text" id="pNom" placeholder="Ej.: Juan Pérez">
+<div class="row">
+<div><label for="pN1">Nota 1</label><input type="number" id="pN1" step="any" placeholder="0"></div>
+<div><label for="pN2">Nota 2</label><input type="number" id="pN2" step="any" placeholder="0"></div>
+<div><label for="pN3">Nota 3</label><input type="number" id="pN3" step="any" placeholder="0"></div>
+</div>
+<button onclick="calcularPromedio()">Calcular promedio</button>
+<div class="result" id="pRes"></div>
+</section>
+
+<!-- Problema 4: Comparación de dos valores. Ahora debe solicitar al usuario dos números y 
+determine cuál es mayor, cuál es menor y muestre la diferencia entre ambos -->
+<section>
+<h2>4. Comparación de dos valores</h2>
+<div class="row">
+<div><label for="kA">Primer número</label><input type="number" id="kA" step="any" placeholder="Ej.: 15"></div>
+<div><label for="kB">Segundo número</label><input type="number" id="kB" step="any" placeholder="Ej.: 8"></div>
+</div>
+<button onclick="compararValores()">Comparar</button>
+<div class="result" id="kRes"></div>
+</section>
+</main>
+
+<script src="script.js"></script> 
+<!-- LLAMADA DE JS -->
+</body>
+</html>
